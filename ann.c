@@ -79,7 +79,7 @@ void feed(int size, double *weights,
 		double * outputs, double (*activate)(double))
 {
 	for (int i = 0; i < size; ++i)
-		outputs[i] = dot(size, weights + (i*size), outputs);
+		outputs[i] = activate(dot(size, weights + (i*size), outputs));
 }
 
 int main(int argc, char *argv[])
